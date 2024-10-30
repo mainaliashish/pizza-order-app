@@ -5,7 +5,7 @@ const AppHeader = () => {
   return (
     <header>
         <Link to='/'>Fast React Pizza Co.</Link>
-        <p></p>
+        <p>Ashish Mainali</p>
     </header>
   )
 }
