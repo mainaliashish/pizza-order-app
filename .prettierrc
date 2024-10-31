@@ -1,0 +1,12 @@
+{
+  "plugins": [
+    "prettier-plugin-tailwindcss",
+    "prettier-plugin-organize-attributes"
+  ],
+  "printWidth": 90,
+  "organizeAttributes": {
+    "splitAttributes": true,
+    "quoteStyle": "double"
+  },
+  "tailwindConfig": "./tailwind.config.js"
+}
