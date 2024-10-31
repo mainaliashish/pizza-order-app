@@ -41,32 +41,38 @@ function CreateOrder() {
   const cart = fakeCart;
 
   return (
-    <div className="mt-3">
-      <h2>Ready to order? Let's go!</h2>
+    <div className="px-4 py-6">
+      <h2 className="mb-8 text-xl font-semibold">Ready to order? Let's go!</h2>
 
       {/* <Form method="POST" action='/order/new'> */}
       <Form method="POST">
-        <div className="my-2">
-          <label>First Name</label>
-          <input type="text" name="customer" className="input" required />
-        </div>
-
-        <div className="my-2">
-          <label>Phone number</label>
-          <div>
-            <input type="tel" name="phone" className="input" required />
-          </div>
-          {formErrors?.phone && <p>{formErrors.phone}</p>}
-        </div>
-
-        <div className="my-2">
-          <label>Address</label>
-          <div>
-            <input type="text" name="address" className="input" required />
+        <div className="mb-5 flex flex-col gap-2 sm:flex-row sm:items-center">
+          <label className="sm:basis-40">First Name</label>
+          <div className="grow">
+            <input type="text" name="customer" className="input w-full" required />
           </div>
         </div>
 
-        <div className="flex items-center">
+        <div className="mb-5 flex flex-col gap-2 sm:flex-row sm:items-center">
+          <label className="sm:basis-40">Phone number</label>
+          <div className="grow">
+            <input type="tel" name="phone" className="input w-full" required />
+            {formErrors?.phone && (
+              <p className="mt-2 rounded-lg bg-red-100 p-2 text-xs text-red-800">
+                {formErrors.phone}
+              </p>
+            )}
+          </div>
+        </div>
+
+        <div className="mb-5 flex flex-col gap-2 sm:flex-row sm:items-center">
+          <label className="sm:basis-40">Address</label>
+          <div className="grow">
+            <input type="text" name="address" className="input w-full" required />
+          </div>
+        </div>
+
+        <div className="flex items-center gap-5">
           <input
             type="checkbox"
             name="priority"
@@ -75,7 +81,7 @@ function CreateOrder() {
             // value={withPriority}
             // onChange={(e) => setWithPriority(e.target.checked)}
           />
-          <label className="ml-2" htmlFor="priority">
+          <label className="font-medium" htmlFor="priority">
             Want to yo give your order priority?
           </label>
         </div>
