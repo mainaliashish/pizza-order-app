@@ -4,9 +4,8 @@ import Home from "../ui/Home";
 import Error from "../ui/Error";
 import Menu, { loader as menuLoader } from "../features/menu/Menu";
 import Cart from "../features/cart/Cart";
-import CreateOrder, {
-  action as creatOrderAction,
-} from "../features/order/CreateOrder";
+import CreateOrder, { action as creatOrderAction } from "../features/order/CreateOrder";
+import { action as updateOrderAction } from "../features/order/UpdateOrder";
 import Order, { loader as orderLoader } from "../features/order/Order";
 
 export const appRouter = createBrowserRouter([
@@ -37,6 +36,7 @@ export const appRouter = createBrowserRouter([
         element: <Order />,
         loader: orderLoader,
         errorElement: <Error />,
+        action: updateOrderAction,
       },
     ],
   },
